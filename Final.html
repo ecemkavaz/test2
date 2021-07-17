@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+  <script>
+    let  thisPage = 'Final.html';
+    const pageLoad = function(){
+   // check to see if page has been visited before and if so get page data
+    let getVisited = localStorage.getItem('visited');
+    let isVisited = JSON.parse(getVisited);
+    if(isVisited.includes(thisPage)) return getPageData();
+}
+
+document.addEventListener('DOMContentLoaded', pageLoad)
+
+
+  </script>
+
+
+    <div class="form-group">
+                  <button type="submit" id="submit" class="btn"  onclick="submitForm()">  Submit </button>
+
+            </div>
+</body>
+</html>

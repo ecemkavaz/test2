@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+ <!-- Add your site or application content here -->
+ <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'Ecem', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+ <script>
+    let thisPage = 'index.html';
+
+Array.prototype.shuffle = function () {
+  let input = this;
+  for (let i = input.length - 1; i >= 0; i--) {
+    let randomIndex = Math.floor(Math.random() * (i + 1));
+    let itemAtIndex = input[randomIndex];
+    input[randomIndex] = input[i];
+    input[i] = itemAtIndex;
+  }
+  return input;
+}
+
+firstPageLoad = function(){
+// check for local Storage
+if(!localStorage) return alert('Please change privacy settings to allow local storage and reload');
+
+// check to see if page has been visited before
+let isVisited = localStorage.getItem('visited');
+console.log(`isVisited :${isVisited}`);
+if(isVisited !== null) return getPageData();
+
+// shuffle the page orders
+var firstPages = ['index.html'];
+var randoms = ['page2.html','page3.html','Task1A.html' ];
+var lastPages = ['Final.html'];
+randoms.shuffle();
+let pages = firstPages.concat(randoms, lastPages);
+
+
+//set routes/ positions/ visited pages in local storage
+
+localStorage.setItem('pageArray',JSON.stringify(pages));
+localStorage.setItem('pos', 0);
+
+}
+
+document.addEventListener('DOMContentLoaded', firstPageLoad)
+
+ </script>
+
+ <div class="container ">
+        <header class="header">
+            <h1 id="title">
+               Data Visualisation for Linguistics
+            </h1>
+            <p id="description">
+                Welcome to our study!
+             <p> Before continuing please read the information below and continue to study if you agree with it. </p>
+            </p>
+        </header>
+        <form action="" id="survey-form">
+          <!-- Consent form -->
+          <div>
+           <p>
+             We would like to invite you to be part of this research project, if you would like to. You
+should only agree to take part if you want to, it is entirely up to you. If you choose not to
+take part, there won’t be any disadvantages for you and you will hear no more about it.
+
+
+
+           </p>
+
+            <p>
+              Please read the following information carefully before you decide to take part; this will tell
+you why the research is being done and what you will be asked to do if you take part.
+Please ask if there is anything that is not clear or if you would like more information.
+If you decide to take part, you will be asked to tick the 'I agree to take part in this study' box.
+            </p>
+
+            <p>
+              You are still free to withdraw at any time and without giving a reason.
+            </p>
+
+            <p style="margin-top: 50px">
+
+            <h4>Details of the study:</h4>
+
+This study is an interdisciplinary study between linguists and computer scientists that is designed to support linguistic team to analyse their annotated corpus with data visualisations. Their corpus is designed to examine toxic messages occurring on comment sections of digital newspapers. We have designed a data visualisation tool that aims to analyse their toxic messages corpus easily and efficiently. To evaluate our tool, we will give you some tasks and ask you to interact with our visualisation tool to complete these tasks. At the end of each tasks we will ask you to answer some questions and at the end we will ask you some subjective questions regarding your experience. We will then aggregate the collected data to draw conclusions on the abilities of our tool.
+
+            </p>
+
+            <p style="margin-top: 50px">
+
+            <h4>Instructions:</h4>
+You will be presented with the visualisation tool and X number of tasks that you have to complete. Please interact with the tool to answer the questions that are given in the tasks.
+
+The expected duration of the evaluation is 30-35 minutes.
+
+            </p>
+
+<p> If you have any questions or concerns about the manner in which the study was
+conducted please, in the first instance, contact the researcher responsible for the study Ecem Kavaz – ekavazka27@alumnes.ub.edu)
+
+</p>
+
+            <p style="margin-top: 50px">
+              Thank you for considering to taking part in this research. The study is explained to you above and if you agree with the statements given below please tick the box next to the statement ‘I agree to take part is this study’.
+            </p>
+
+              <ul>
+  <li>I agree that the research project named above has been explained to me to my satisfaction in verbal and/or written form.</li>
+  <li>
+I understand that if I decide at any other time during the research that I no longer wish to participate in this project, I can notify the researchers involved and be withdrawn from it immediately.
+</li>
+  <li>I have read the notes written above  about the project, and understand what the research study involves.</li>
+</ul>
+
+          </div>
+
+
+           <!-- Checkbox section -->
+            <div class="form-group">
+                <label for="">
+                    <input type="checkbox" name="prefer" class="checkbox" value="Agree" required> I agree to take part in this study.
+
+                </label>
+
+            </div>
+            <!-- End of checkbox section -->
+
+            <div class="form-group">
+              <button type="submit" id="submit" class="btn"><a  onclick="forwardButton()" >Next </a></button>
+
+
+
+
+
+
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

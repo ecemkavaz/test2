@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+ <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'Ecem', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+ <!-- <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+
+
+  <script>
+    let  thisPage = 'page3.html';
+    const pageLoad = function(){
+   // check to see if page has been visited before and if so get page data
+    let getVisited = localStorage.getItem('visited');
+    let isVisited = JSON.parse(getVisited);
+    if(isVisited.includes(thisPage)) return getPageData();
+}
+
+document.addEventListener('DOMContentLoaded', pageLoad)
+
+
+  </script>
+
+ <div class="container ">
+        <header class="header">
+            <h1 id="title">
+               Data Visualisation for Linguistics
+            </h1>
+
+        </header>
+
+    </div>
+
+  <div>
+
+    <img alt="" src="img/img1.png" style="width: 550px; height: 550px; margin-left: 60px;">
+
+    <img alt="" src="img/img1.png" style="width: 550px; height: 550px; float: right; margin-right: 60px;">
+  </div>
+
+
+
+
+
+
+
+<div style="margin-top:50px; position: center; margin-bottom: 50px" >
+  <form action="" id="answer-form">
+
+    <div class="form-group" >
+              <p id="quest">Please answer these questions</p>
+                 <label>Which one of the graphs is more toxic? </label>
+      <label>
+        <input type="checkbox" name="prefer" class="checkbox" value="graph1" >
+      </label> Graph 1
+      <label>
+        <input type="checkbox" name="prefer" class="checkbox" value="graph2">
+      </label> Graph 2
+
+            </div>
+
+
+
+ <div class="form-group" >
+              <p id="questt"></p>
+                 <label>Which glyph do you prefer? </label>
+   <label>
+     <input type="checkbox" name="prefer" class="checkbox" value="glyph" >
+   </label> Glyph
+   <label>
+     <input type="checkbox" name="prefer" class="checkbox" value="dots">
+   </label> Dots
+
+
+            </div>
+
+
+    <div class="form-group">
+
+                <button type="submit" id="submit" class="btn" onclick="forwardButton()" >  Next </button>
+            </div>
+  </form>
+</div>
+
+
+
+</body>
+
+</html>
