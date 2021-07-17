@@ -35,7 +35,7 @@ const changePage = function (direction) {
     // navigate to next page and change our position
     direction === 'forward' ? localStorage.setItem('pos', (parseInt(position) +1)) : localStorage.setItem('pos', (parseInt(position) -1));
     let pos = localStorage.getItem('pos');
-     window.location.href = `file:///Users/Ecem/Documents/EvaluationWebsite/index.html`;
+     window.location.href = `https://ecemkavaz.github.io/test2/`;
 
   // window.location.href = `http://127.0.0.1:5500/${formPages[pos]}`;
 
